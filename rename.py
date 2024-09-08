@@ -13,7 +13,7 @@ def rename_files_and_dirs(root_dir, search_text, replace_text):
     for dirpath, dirnames, filenames in os.walk(root_dir, topdown=False):
         # Rename .py files
         for filename in filenames:
-            if filename.endswith('.py') and search_text in filename:
+            if filename.endswith('.jpg') and search_text in filename:
                 new_filename = filename.replace(search_text, replace_text)
                 os.rename(
                     os.path.join(dirpath, filename),
@@ -32,7 +32,7 @@ def rename_files_and_dirs(root_dir, search_text, replace_text):
 def search_and_replace(root_dir, search_text, replace_text):
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
-            if filename.endswith('.py'):
+            if filename.endswith('.jpg'):
                 file_path = os.path.join(dirpath, filename)
                 replace_in_file(file_path, search_text, replace_text)
     
